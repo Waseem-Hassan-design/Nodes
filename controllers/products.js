@@ -1,13 +1,13 @@
-// const product = async(req,res) => {
-// res.status(200).json({msg : "welcome to products"});
-// }
-// const productshow = async(req,res)=> {
-//  res.status(200).json({msg: "welcome to product show"})
-// }
-// const producttest = async(req,res)=> {
-//     res.status(200).json({msg: "welcome to product test"})
-//    }
-// module.exports = {product,productshow,producttest};
+// // const product = async(req,res) => {
+// // res.status(200).json({msg : "welcome to products"});
+// // }
+// // const productshow = async(req,res)=> {
+// //  res.status(200).json({msg: "welcome to product show"})
+// // }
+// // const producttest = async(req,res)=> {
+// //     res.status(200).json({msg: "welcome to product test"})
+// //    }
+// // module.exports = {product,productshow,producttest};
 
 const Product = require('../models/product')
 const getAllProductsShow = async (req,res) => {
@@ -45,7 +45,7 @@ const getAllProducts = async (req,res) => {
         apiData = apiData.select(selectFix)
     }
     let page = Number(req.query.page) || 1;
-    let limit = Number(req.query.limit) || 3;
+    let limit = Number(req.query.limit) || 10;
 
     let skip = (page - 1) * limit;
 
@@ -71,4 +71,5 @@ const getAllProducts = async (req,res) => {
 const getAllProductsTesting =async (req,res) =>{
 res.status(200).json({msg: "I am getAllProductsTesting"})
 }
+
 module.exports = {getAllProducts,getAllProductsTesting,getAllProductsShow};
